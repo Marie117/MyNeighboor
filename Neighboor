@@ -1,0 +1,65 @@
+import React from 'react';
+import { StyleSheet, Text, View, TextInput, Button, Dimensions, Image } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+
+
+// Get screen dimensions
+const { height, width } = Dimensions.get('window');
+
+export default function App() {
+  return (
+    <LinearGradient style={styles.container} colors={['#FEFEFE', '#FEFEE2']}>
+      <View style={styles.header}>
+        <Text style={styles.title}>New Neighboor</Text>
+      </View>
+      <View style={styles.card}>
+        <Image source={require('./pictures/image.png')} style={{height:150, width:150, borderRadius:150/2}}/>
+        <TextInput style={styles.input} placeholder="Emma" />
+        <TextInput style={styles.input} placeholder="Phone Number" />
+        <TextInput style={styles.input} placeholder="Address" />
+        <TextInput style={styles.input} placeholder="About me" />
+      </View>
+      <View>
+        <Button title="Save" />
+      </View>
+    </LinearGradient>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  title: {
+    color: '#000000',
+    fontSize: 36,
+    marginTop: 15,
+    marginBottom: 15,
+    fontWeight: '250'
+  },
+
+  card: {
+    backgroundColor: '#fff',
+    flex: 1,
+    width: width - 20,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    alignContent: "center"
+  },
+
+  input: {
+    width: width - 50,
+    height: 50,
+    marginTop: 40,
+    borderWidth: 1,
+    padding: 10,
+    borderBottomColor: '#bbb',
+    borderBottomWidth: 2,
+    fontSize: 22
+  }
+
+});
